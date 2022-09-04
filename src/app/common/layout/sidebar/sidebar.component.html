@@ -1,0 +1,39 @@
+<div class="sidebar">
+	<div class="logo">
+		<img src="/assets/img/logo.png" alt="">
+	</div>
+	<div class="sidebar-nav mt-3">
+		<ul class="nav">
+			<li class="nav-item" routerLinkActive="active">
+				<a [routerLink]="['/dashboard']" class="nav-link d-flex align-items-center gap-10">
+					<i class='bx bxs-dashboard'></i>
+					<span class="menu-txt">Dashboard</span>
+				</a>
+			</li>
+			<li class="nav-item" routerLinkActive="active">
+				<a class="nav-link d-flex align-items-center gap-10">
+					<i class='bx bxl-dropbox'></i>
+					<span class="menu-txt">Product</span>
+				</a>
+			</li>
+			<li class="nav-item" routerLinkActive="active">
+				<a [routerLink]="['/category']" class="nav-link d-flex align-items-center gap-10">
+					<i class='bx bx-category-alt'></i>
+					<span class="menu-txt">Category</span>
+				</a>
+			</li>
+			<li class="nav-item" routerLinkActive="active">
+				<a [routerLink]="['/brand']" class="nav-link d-flex align-items-center gap-10">
+					<i class='bx bxs-analyse'></i>
+					<span class="menu-txt">Brand</span>
+				</a>
+			</li>
+			<li class="nav-item" routerLinkActive="active">
+				<a class="nav-link d-flex align-items-center gap-10">
+					<i class='bx bxs-cog'></i>
+					<span class="menu-txt">Settings</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>

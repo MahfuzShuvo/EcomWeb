@@ -1,0 +1,199 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap';
+@import '~ngx-toastr/toastr.css';
+@import './constant.scss';
+@import './button.scss';
+
+
+/* styling scrollbar */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 3px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #adadad5c;
+    border-radius: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #012c5247;
+    border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #b7b9bb;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: $background-color;
+    font-size: 11px;
+    font-weight: 500;
+    color: $text-color;
+}
+
+// header
+header {
+    position: fixed;
+    top: 0;
+    left: 200px;
+    right: 0;
+    width: calc(100vw - 200px);
+    height: 50px;
+    padding: 12px 15px;
+
+    // background: #fff;
+    // box-shadow: 0 0px 5px #00000010;
+    .page-title {
+
+        span {
+            color: #000;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+// sidebar
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background: $primary-color;
+
+    .logo {
+        margin: 10px;
+
+        img {
+            width: 60%;
+        }
+    }
+
+    .sidebar-nav {
+        .nav {
+            .nav-item {
+                width: 100%;
+                margin: 5px 10px;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.1s ease;
+
+                .nav-link {
+                    i {
+                        color: #ccc;
+                        font-size: 16px;
+                        transition: all 0.1s ease;
+                    }
+
+                    .menu-txt {
+                        color: #ccc;
+                        font-size: 12px;
+                        font-weight: 700;
+                        transition: all 0.1s ease;
+                    }
+                }
+
+                &:hover {
+                    transform: scale(.98);
+
+                    i,
+                    .menu-txt {
+                        color: #fff;
+                    }
+                }
+
+                &.active {
+                    background: #00000061;
+
+                    i,
+                    .menu-txt {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// main
+main {
+    position: fixed;
+    left: 200px;
+    top: 50px;
+    height: calc(100vh - 50px);
+    width: calc(100vw - 200px);
+    padding: 10px 15px;
+}
+
+// form
+.ecom-form-group {
+    padding: 5px 0;
+
+    label {
+        font-size: 11px;
+        font-weight: 500;
+    }
+
+    input,
+    textarea,
+    select {
+        font-size: 11px;
+        border-radius: 5px;
+        border: 1px solid #e0e0e0;
+        outline: none;
+        box-shadow: none !important;
+
+        &:focus {
+            border: 1px solid $secondary-color;
+        }
+    }
+}
+
+// table
+.gridtable {
+    table {
+        tbody {
+            display: block;
+            height: calc(100vh - 135px);
+            overflow-y: scroll;
+            tr {
+                border-bottom: 1px solid #efefef;
+            }
+        }
+        thead {
+            width: calc(100% - 7px) !important;
+            position: relative;
+            tr {
+                th {
+                    background: #e0e0e0;
+                    height: 30px;
+                    border: none;
+                    &:first-child {
+                        border-top-left-radius: 4px;
+                        border-bottom-left-radius: 4px
+                    }
+                    &:last-child:after {
+                        content: ' ';
+                        position: absolute;
+                        background-color: #e0e0e0;
+                        width: 7px;
+                        height: 34px;
+                        right: -7px;
+                        top: 0;
+                        border-top-right-radius: 4px;
+                        border-bottom-right-radius: 4px
+                    }
+                }
+            }
+        }
+        thead,
+        tbody tr {
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+        }
+        td, th {
+            padding: 8px 20px;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+<header class="d-flex align-items-center gap-15">
+	<div class="page-title">
+		<span class="font-15 weight-400">{{title}}</span>
+	</div>
+	<button *ngIf="title != 'Dashboard'" class="add-button"
+		(click)="openModal($event, 'Add '+title, '', fields)">
+		<i class='bx bx-plus font-15'></i>
+		<span class="add-button-txt">Add {{title}}</span>
+	</button>
+</header>

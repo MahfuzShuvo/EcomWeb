@@ -1,0 +1,19 @@
+<div class="gridtable">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Name</th>
+				<th>Parent</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let category of lstCategory; let i = index">
+				<td>{{ i+1 }}</td>
+				<td>{{ category.name }}</td>
+				<td>{{ getParentCategory(category.parentId) }}</td>
+			</tr>
+		</tbody>
+	</table>
+	<span class="text-light font-10">Total: <b class="text-default">{{totalCategory}}</b></span>
+</div>

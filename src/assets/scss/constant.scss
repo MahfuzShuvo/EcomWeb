@@ -1,0 +1,100 @@
+// color variable
+$background-color: #f8f9fa;
+$primary-color: #e14461;
+$secondary-color: #0f1166;
+$text-color: #1e1e20;
+$light-text-color: #888;
+
+// font size
+.font-10 {
+    font-size: 10px !important;
+}
+.font-11 {
+    font-size: 11px !important;
+}
+.font-12 {
+    font-size: 12px !important;
+}
+.font-13 {
+    font-size: 13px !important;
+}
+.font-15 {
+    font-size: 15px !important;
+}
+.font-17 {
+    font-size: 17px !important;
+}
+.font-20 {
+    font-size: 20px !important;
+}
+.font-22 {
+    font-size: 22px !important;
+}
+.font-25 {
+    font-size: 25px !important;
+}
+
+// font weight
+.weight-300 {
+    font-weight: 300 !important;
+}
+.weight-400 {
+    font-weight: 400 !important;
+}
+.weight-500 {
+    font-weight: 500 !important;
+}
+.weight-600 {
+    font-weight: 600 !important;
+}
+.weight-700 {
+    font-weight: 700 !important;
+}
+.weight-800 {
+    font-weight: 800 !important;
+}
+.weight-900 {
+    font-weight: 900 !important;
+}
+
+// grid gap
+.gap-3 {
+    gap: 3px !important;
+}
+.gap-5 {
+    gap: 5px !important;
+}
+.gap-7 {
+    gap: 7px !important;
+}
+.gap-10 {
+    gap: 10px !important;
+}
+.gap-12 {
+    gap: 12px !important;
+}
+.gap-15 {
+    gap: 15px !important;
+}
+.gap-20 {
+    gap: 20px !important;
+}
+.gap-25 {
+    gap: 25px !important;
+}
+// common
+ul {
+    li {
+        list-style: none;
+    }
+}
+a {
+    text-decoration: none;
+}
+
+.text-light {
+    color: $light-text-color !important;
+}
+.text-default {
+    color: $text-color !important;
+}

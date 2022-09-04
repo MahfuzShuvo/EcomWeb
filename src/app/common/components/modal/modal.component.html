@@ -1,0 +1,16 @@
+<div class="modal">
+	<div class="modal-overlay" (click)="close($event)"></div>
+	<div class="modal--modal-content">
+		<span class="modal-title" [innerHTML]="modalTitle"></span>
+		<div [innerHTML]="modalText"></div>
+		<div class="modal--modal-content-body">
+			<app-form
+				[fields]="getFields()" 
+				(onSubmit)="formSubmit($event)">
+			</app-form>
+			<a class="modal--close-btn" (click)="close($event)">
+				<i class='bx bx-x font-20'></i>
+			</a>
+		</div>
+	</div>
+</div>
