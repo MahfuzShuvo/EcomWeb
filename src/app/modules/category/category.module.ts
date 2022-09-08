@@ -1,8 +1,10 @@
+import { ChildCategoryComponent } from './child-category/child-category.component';
 import { CategoryRoutingModule } from './category-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CategoryComponent } from './category.component';
 import { SharedModule } from 'src/app/shared.module';
+import { ParentCategoryComponent } from './parent-category/parent-category.component';
 
 @NgModule({
   imports: [
@@ -10,6 +12,10 @@ import { SharedModule } from 'src/app/shared.module';
     CategoryRoutingModule,
     SharedModule.forRoot(),
   ],
-  declarations: [CategoryComponent]
+  declarations: [
+    CategoryComponent,
+    ParentCategoryComponent,
+    ChildCategoryComponent
+  ]
 })
 export class CategoryModule { }

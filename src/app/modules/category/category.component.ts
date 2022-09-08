@@ -5,6 +5,7 @@ import { ResponseStatus } from './../../common/enums/appEnums';
 import { CategoryService } from './../../services/category.service';
 import { Component, OnInit } from '@angular/core';
 import { HeaderService } from 'src/app/services/header.service';
+import { CategoryVM } from 'src/app/models/VM/categoryVM';
 
 
 @Component({
@@ -15,6 +16,8 @@ import { HeaderService } from 'src/app/services/header.service';
 export class CategoryComponent implements OnInit {
 
     lstCategory: Category[] = [];
+    parentCategory: CategoryVM[] = [];
+    childCategory: Category[] = [];
     dropdownOption: any[] = [{ key: 0, label: 'Select --'}];
     onSubmitValue: Category = new Category();
     totalCategory: number = 0;
@@ -124,6 +127,7 @@ export class CategoryComponent implements OnInit {
             
             if (response.responseCode == ResponseStatus.success) {
                 this.lstCategory.unshift(response.responseObject);
+
                 this.totalCategory++;
                 this.messageHelper.showMessage(response.responseCode, response.message);
             } else {
@@ -132,14 +136,34 @@ export class CategoryComponent implements OnInit {
         })
     }
 
-    getParentCategory(parentId: number)
-    {
-        if (parentId == 0) {
-            return '-';
-        } else {
-            var parentCat = this.lstCategory.filter(c => c.categoryId == parentId)[0].name;
-            return parentCat;
-        }
+    findParent() {
+        var parent: CategoryVM[] = [];
+        this.lstCategory.forEach(c => {
+            var cat = new CategoryVM();
+            if (c.parentId == 0) {
+                
+                cat.categoryId = c.categoryId;
+                cat.name = c.name;
+                cat.parentId = c.parentId;
+
+                parent.push(cat);
+            }
+        });
+
+        this.formatCategoryTree(parent, this.lstCategory);
+        
+        return parent;
+    }
+
+    formatCategoryTree(parentCategory: CategoryVM[], allCategory: Category[]) {
+        parentCategory.forEach(p => {
+            p.child = allCategory.filter(x => x.parentId == p.categoryId)
+
+            
+                if (p.child.length > 0) {
+                    this.formatCategoryTree(p.child, allCategory);
+                }
+        })
     }
 
 }

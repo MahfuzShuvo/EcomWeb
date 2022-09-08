@@ -1,0 +1,18 @@
+<div class="d-flex align-items-center">
+	<i *ngIf="category.hasChild == false || category.parentId > 0" class='bx bx-subdirectory-right font-25 text-theme-light'></i>
+	<div class="bg-category px-4 py-2 rounded flex-fill mt-2 d-flex align-items-center justify-content-between" 
+		[class.weight-700]="category.hasChild || category.parentId == 0"
+		[class.font-12]="category.parentId == 0">
+		<span>{{category.name}}</span>
+		<div class="d-flex align-items-center justify-content-end gap-10">
+			<button type="button" class="action-button edit">
+				<i class='bx bxs-edit'></i>
+			</button>
+			<button type="button" class="action-button delete">
+				<i class='bx bx-trash'></i>
+			</button>
+		</div>
+	</div>
+
+</div>
+<app-parent-category [categories]="category.child"></app-parent-category>

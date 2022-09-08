@@ -59,7 +59,7 @@ header {
     left: 0;
     width: 200px;
     height: 100vh;
-    background: $primary-color;
+    background: $sidebar-color;
 
     .logo {
         margin: 10px;
@@ -123,6 +123,7 @@ main {
     height: calc(100vh - 50px);
     width: calc(100vw - 200px);
     padding: 10px 15px;
+    overflow: auto;
 }
 
 // form
@@ -194,6 +195,14 @@ main {
         }
         td, th {
             padding: 8px 20px;
+            vertical-align: middle;
+            &:last-child {
+                text-align: right;
+                width: 5%;
+            }
+            &:first-child {
+                width: 5%;
+            }
         }
     }
 }

@@ -11,7 +11,7 @@ export class LoadingSpinnerComponent {
 	}
 	static spinnerCanShow: boolean;
 
-	@Input('spinner-text') spinnerText = 'loading please wait...';
+	@Input('spinner-text') spinnerText = 'Please wait...';
 	@Input('spinner-imageUrl') spinnerImageUrl = '../../../../assets/img/spinner.gif';
 
 	show() {
