@@ -86,7 +86,7 @@ export class CategoryComponent implements OnInit {
 	constructor(
 		private headerService: HeaderService,
         private messageHelper: MessageHelper,
-        private categoryService: CategoryService,
+        public categoryService: CategoryService,
         modalService: ModalService
 	) { 
         modalService.formValueChanged.subscribe(value => {
@@ -109,10 +109,9 @@ export class CategoryComponent implements OnInit {
     getAllCategory() {
         this.categoryService.getAllCategory().subscribe(response => {
             if (response.responseCode == ResponseStatus.success) {
-                this.lstCategory = response.responseObject.result;
-                this.totalCategory = response.responseObject.rows;
+                this.categoryService.setCategory(response.responseObject);
 
-                this.lstCategory.forEach(c => {
+                this.categoryService.lstCategory.forEach(c => {
                     this.dropdownOption.push({ key: c.categoryId, label: c.name });
                 });
 
@@ -126,9 +125,10 @@ export class CategoryComponent implements OnInit {
         this.categoryService.saveCategory(this.onSubmitValue).subscribe(response => {
             
             if (response.responseCode == ResponseStatus.success) {
-                this.lstCategory.unshift(response.responseObject);
+                // this.lstCategory.unshift(response.responseObject);
+                this.categoryService.lstCategory.unshift(response.responseObject)
 
-                this.totalCategory++;
+                this.categoryService.totalCategory++;
                 this.messageHelper.showMessage(response.responseCode, response.message);
             } else {
                 this.messageHelper.showMessage(response.responseCode, response.message);
@@ -138,19 +138,21 @@ export class CategoryComponent implements OnInit {
 
     findParent() {
         var parent: CategoryVM[] = [];
-        this.lstCategory.forEach(c => {
+        this.categoryService.lstCategory.forEach(c => {
             var cat = new CategoryVM();
             if (c.parentId == 0) {
                 
                 cat.categoryId = c.categoryId;
                 cat.name = c.name;
                 cat.parentId = c.parentId;
+                cat.status = c.status;
+                cat.hasChild = c.hasChild;
 
                 parent.push(cat);
             }
         });
 
-        this.formatCategoryTree(parent, this.lstCategory);
+        this.formatCategoryTree(parent, this.categoryService.lstCategory);
         
         return parent;
     }

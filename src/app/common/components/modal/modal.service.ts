@@ -22,6 +22,7 @@ export class ModalService {
     }
 
     addDynamicComponent(modalTitle: string, modalText: string, formField: []) {
+        
         const factory = this.factoryResolver.resolveComponentFactory(ModalComponent);
         const component = factory.create(this.rootViewContainer!.parentInjector);
 		
@@ -34,7 +35,6 @@ export class ModalService {
 
         // subscribe formValue
         // component.instance.formValue.subscribe((res) => this.setFormValue(res))
-
         this.rootViewContainer!.insert(component.hostView);
     }
 

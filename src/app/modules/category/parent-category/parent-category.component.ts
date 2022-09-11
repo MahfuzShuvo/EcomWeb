@@ -1,5 +1,5 @@
 import { CategoryVM } from 'src/app/models/VM/categoryVM';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
 	selector: 'app-parent-category',
@@ -12,6 +12,7 @@ export class ParentCategoryComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit() {
+		
 	}
 
 }

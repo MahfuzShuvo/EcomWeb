@@ -7,16 +7,19 @@ $text-color: #1e1e20;
 $light-text-color: #888;
 
 $primary-color: #6ba7ff;
-$success-color: #5cb85c;
+$success-color: #6ec06e;
 $danger-color: #ff1010;
 $warning-color: #ffd043;
 
 $light-primary-color: #6ba7ff25;
-$light-success-color: #5cb85c25;
+$light-success-color: #6ec06e25;
 $light-danger-color: #ff101025;
 $light-warning-color: #ffd04325;
 
 // font size
+.font-9 {
+    font-size: 9px !important;
+}
 .font-10 {
     font-size: 10px !important;
 }
@@ -131,4 +134,28 @@ a {
 
 .bg-category {
     background: #dee2e6;
+}
+.bg-light-danger {
+    background: $light-danger-color;
+}
+
+
+// custom toast color
+.toast {
+  background-color: #030303;
+}
+.toast-info {
+  background-color: #3276b1;
+}
+.toast-info2 {
+  background-color: #2f96b4;
+}
+.toast-error {
+  background-color: $danger-color !important;
+}
+.toast-success {
+  background-color: $success-color !important;
+}
+.toast-warning {
+  background-color: $warning-color !important;
 }

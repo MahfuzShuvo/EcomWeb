@@ -1,3 +1,4 @@
+import { CategoryService } from './../../services/category.service';
 import { ChildCategoryComponent } from './child-category/child-category.component';
 import { CategoryRoutingModule } from './category-routing.module';
 import { NgModule } from '@angular/core';
@@ -16,6 +17,9 @@ import { ParentCategoryComponent } from './parent-category/parent-category.compo
     CategoryComponent,
     ParentCategoryComponent,
     ChildCategoryComponent
+  ],
+  providers: [
+    CategoryService
   ]
 })
 export class CategoryModule { }
