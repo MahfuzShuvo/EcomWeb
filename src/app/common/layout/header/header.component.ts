@@ -26,10 +26,21 @@ export class HeaderComponent implements OnInit {
 		});
 	}
 
-	openModal(e: any, modalTitle: string, modalText: string, formField: []) {
+	openModal(e: any) {
 		e.preventDefault();
 		this.modalService.setRootViewContainerRef(this.viewContainerRef);
-		this.modalService.addDynamicComponent(modalTitle, modalText, formField);
+		if (this.title == "Category") {
+			this.modalService.categorySaveDynamicComponent('Add Category', {
+				categoryId: 0,
+				name: '',
+				parentId: 0,
+				hasChild: false,
+				status: true
+			});
+		}
+		if (this.title == "Brand") {
+			this.modalService.brandSaveDynamicComponent('Add Brand', '');
+		}
 	}
 
 }

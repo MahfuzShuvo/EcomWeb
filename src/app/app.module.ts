@@ -1,4 +1,4 @@
-import { ModalComponent } from './common/components/modal/modal.component';
+import { CategorySaveComponent } from './common/components/modal/category-save/category-save.component';
 import { SidebarComponent } from './common/layout/sidebar/sidebar.component';
 import { HeaderComponent } from './common/layout/header/header.component';
 import { HttpClient } from '@angular/common/http';
@@ -15,20 +15,18 @@ import { HttpHelper } from './common/http/httpHelper';
 import { MessageHelper } from './common/message/messageHelper';
 import { SharedModule } from './shared.module';
 import { HeaderService } from './services/header.service';
-import { FormBuilderModule } from './common/components/form/form.module';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		HeaderComponent,
 		SidebarComponent,
-		ModalComponent
+		CategorySaveComponent
 	],
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
 		AppRoutingModule,
-		FormBuilderModule,
 		SharedModule.forRoot(),
 		ToastrModule.forRoot()
 	],
